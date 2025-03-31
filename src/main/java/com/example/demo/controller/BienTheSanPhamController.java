@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/smartphone/bienthe")
+@CrossOrigin(origins = "http://localhost:5173")
 public class BienTheSanPhamController {
 
     @Autowired

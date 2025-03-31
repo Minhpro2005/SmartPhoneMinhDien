@@ -40,6 +40,7 @@ public class BienTheSanPhamService {
             existing.setSoLuong(updated.getSoLuong());
             existing.setGiaBan(updated.getGiaBan());
             existing.setTrangThai(updated.isTrangThai());
+            existing.setHinhAnh(updated.getMauSac());
             existing.setHinhAnh(updated.getHinhAnh());
             return bienTheRepo.save(existing);
         }

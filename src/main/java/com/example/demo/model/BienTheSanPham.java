@@ -18,19 +18,21 @@ public class BienTheSanPham {
     private int maBienThe;
 
     @ManyToOne
-    @JoinColumn(name = "maSP", nullable = false)
+    @JoinColumn(name = "maSP")
     private SanPham sanPham;
 
-    @Column(nullable = false)
     private String tenBienThe;
 
-    @Column(nullable = false)
     private int soLuong;
 
-    @Column(nullable = false, precision = 18, scale = 2)
+    @Column( precision = 18, scale = 2)
     private BigDecimal giaBan;
 
     private boolean trangThai = true;
 
     private String hinhAnh;
+    
+    @Column(name = "MauSac")
+    private String mauSac;
+
 }
