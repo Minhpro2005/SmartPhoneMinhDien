@@ -18,11 +18,11 @@ public class DonHangChiTiet {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "maDonHang", nullable = false)
+    @JoinColumn(name = "maDonHang")
     private DonHang donHang;
 
     @ManyToOne
-    @JoinColumn(name = "maSP", nullable = false)
+    @JoinColumn(name = "maSP")
     private SanPham sanPham;
 
     @Column(nullable = false)

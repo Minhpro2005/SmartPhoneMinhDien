@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,8 +28,11 @@ public class UsersService {
         return usersRepository.findById(id);
     }
 
-    // Thêm người dùng
+    // ✅ Thêm người dùng - gán ngày tạo nếu null
     public Users createUser(Users user) {
+        if (user.getNgayTao() == null) {
+            user.setNgayTao(new Date()); // Gán ngày tạo là ngày hiện tại
+        }
         return usersRepository.save(user);
     }
 
@@ -72,4 +76,5 @@ public class UsersService {
                 return "Không xác định";
         }
     }
+    
 }

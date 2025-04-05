@@ -13,21 +13,25 @@ import java.math.BigDecimal;
 @Builder
 public class GioHangChiTiet {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "maGioHang", nullable = false)
-    private GioHang gioHang;
+	    @ManyToOne
+	    @JoinColumn(name = "maGioHang")
+	    private GioHang gioHang;
 
-    @ManyToOne
-    @JoinColumn(name = "maSP", nullable = false)
-    private SanPham sanPham;
+	    @ManyToOne
+	    @JoinColumn(name = "maSP")
+	    private SanPham sanPham;
 
-    @Column(nullable = false)
-    private int soLuong = 1;
+	    @ManyToOne
+	    @JoinColumn(name = "maBienThe", nullable = true) // ✅ Thêm ràng buộc này
+	    private BienTheSanPham bienThe;
 
-    @Column(nullable = false, precision = 18, scale = 2)
-    private BigDecimal giaBan;
+	    @Column(name = "soLuong")
+	    private int soLuong = 1;
+
+	    @Column(nullable = false, precision = 18, scale = 2)
+	    private BigDecimal giaBan;
 }

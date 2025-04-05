@@ -34,7 +34,7 @@ public class Users {
 	    private int vaiTro;
 	    
 	    @Temporal(TemporalType.DATE)
-	    private Date ngayTao;
+	    private Date ngayTao = new Date(); // ✅ gán mặc định là ngày hiện tại
 
 	    private boolean trangThai;
 }

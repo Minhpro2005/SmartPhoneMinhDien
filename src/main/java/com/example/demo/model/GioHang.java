@@ -18,7 +18,7 @@ public class GioHang {
     private int maGioHang;
 
     @ManyToOne
-    @JoinColumn(name = "maKH", nullable = false)
+    @JoinColumn(name = "maKH")
     private KhachHang khachHang;
 
     @Temporal(TemporalType.DATE)
